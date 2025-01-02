@@ -110,3 +110,18 @@ cm = confusion_matrix(y_test, predicted)
 disp = ConfusionMatrixDisplay(confusion_matrix=cm)
 disp.plot()
 plt.show()
+
+
+
+# SAVING AND LOADING THE MODEL
+from joblib import dump, load
+
+# Save the trained model using joblib
+dump(model, '/content/drive/MyDrive/datasets/model.joblib')
+# Load the saved model
+loaded_model = load('/content/drive/MyDrive/datasets/model.joblib')
+
+# Use the loaded model for future prediction
+predicted = loaded_model.predict(x_test)
+print(accuracy_score(y_test, predicted))
+print(confusion_matrix(y_test, predicted))
