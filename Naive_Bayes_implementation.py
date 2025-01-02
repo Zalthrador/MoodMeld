@@ -10,7 +10,8 @@ from nltk import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 
-nltk.download("punkt")
+# nltk.download("punkt")
+nltk.download("punkt_tab")
 nltk.download("stopwords")
 
 from sklearn.metrics import accuracy_score, confusion_matrix
